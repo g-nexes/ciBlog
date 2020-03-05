@@ -1,8 +1,13 @@
+#############
+Blog Webpage
+#############
+
 
 A blog website using CodeIgniter with bootstrap 4
 
-
-# SQL Code
+*************
+SQL Code
+*************
 
 DROP TABLE IF EXISTS `categories`;
 
