@@ -17,6 +17,7 @@ class Categories extends CI_Controller{
         if (!$this->session->userdata('logged_in')) {
             redirect('users/login');
         }
+
         $data['title'] = 'Create category';
 
         $this->form_validation->set_rules('name','Name','required|is_unique[categories.name]',array(
@@ -51,6 +52,7 @@ class Categories extends CI_Controller{
         if (!$this->session->userdata('logged_in')) {
             redirect('users/login');
         }
+
         $this->category_model->delete_category($id);
         $this->session->set_flashdata('category_deleted','Category has been deleted');
         redirect('categories');

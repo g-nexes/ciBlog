@@ -8,7 +8,7 @@
         $config['total_rows'] = $this->db->count_all('posts');
         $config['per_page'] = 4;
         $config['uri_segment'] = 3;
-        $config['attributes'] = array('class' => 'pagination-link');
+        $config['attributes'] = array('class' => 'pagination');
 
         //Init pagination
         $this->pagination->initialize($config);
@@ -91,6 +91,7 @@
         if (!$this->session->userdata('logged_in')) {
             redirect('users/login');
         }
+
         $this->post_model->delete_post($id);
         $this->session->set_flashdata('post_deleted','Your post has been deleted');
         redirect('posts');
@@ -103,6 +104,7 @@
         if (!$this->session->userdata('logged_in')) {
             redirect('users/login');
         }
+
         $data['post'] = $this->post_model->get_posts($slug);
 
         //Check user
@@ -131,6 +133,7 @@
         if (!$this->session->userdata('logged_in')) {
             redirect('users/login');
         }
+
         $this->post_model->update_post();
 
         $this->session->set_flashdata('post_updated','Your post has been updated');
