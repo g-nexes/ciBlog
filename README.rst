@@ -3,7 +3,7 @@ CI Blog Webpage
 #############
 
 
-A blog website using CodeIgniter with bootstrap 4
+A blog website using CodeIgniter with bootstrap 4.4.1
 
 *************
 SQL Code
