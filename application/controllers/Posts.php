@@ -60,17 +60,16 @@
         else{
             //Upload image
             $config = array(
-                'upload_path' => './assets/images/posts',
+                'upload_path' => './assets/images/posts/',
                 'allowed_types' => 'gif|JPG|jpg|png',
                 'max_size' => '4096',
                 'max_width' => '2000',
                 'max_height' => '2000'
             );
 
-            $this->load->library('upload');
-            $this->load->initialize($config);
+            $this->load->library('upload', $config);
 
-            if(!$this->upload->do_upload()){
+            if(!$this->upload->do_upload('userfile')){
                 $errors = array('error' => $this->upload->display_errors());
                 $post_image = 'noimage.jpg';
             } else {
