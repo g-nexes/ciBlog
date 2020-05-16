@@ -1,26 +1,24 @@
-#############
-CI Blog Webpage
-#############
+# CI Blog Webpage
 
+``A blog website using CodeIgniter with bootstrap 4.4.1``
 
-A blog website using CodeIgniter with bootstrap 4.4.1
+## SQL Codes
 
-*************
-SQL Code
-*************
+#### For Categories table
 
-``DROP TABLE IF EXISTS `categories`;``
-
+```sql
+DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (
  `id` int(11) NOT NULL AUTO_INCREMENT,``
   `user_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
-``DROP TABLE IF EXISTS `comments`;``
-
+);
+```
+#### For Comments table
+```sql
+DROP TABLE IF EXISTS `comments`;
 CREATE TABLE IF NOT EXISTS `comments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `post_id` int(11) NOT NULL,
@@ -29,10 +27,12 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `body` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
+```
 
-``DROP TABLE IF EXISTS `posts`;``
-
+#### For Posts table
+```sql
+DROP TABLE IF EXISTS `posts`;
 CREATE TABLE IF NOT EXISTS `posts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category_id` int(11) NOT NULL,
@@ -43,10 +43,12 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `post_image` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
+```
 
-``DROP TABLE IF EXISTS `users`;``
-
+#### For Users table
+```sql
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -56,4 +58,5 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(100) NOT NULL,
   `register_date` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
+```
